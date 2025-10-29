@@ -1,0 +1,125 @@
+@import url("/node_modules/bootstrap-icons/font/bootstrap-icons.css");
+@import 'custom';
+
+html{
+    position: relative;
+    min-height: 100vh;
+}
+main{
+    padding-bottom: 200px; /* Height of the footer */
+}
+footer.footer {
+    padding:15px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+p{
+    font-family:"hind madurai", sans-serif;
+    font-size: 18px;
+}
+.hero-scene{
+    position: relative;
+    &::before{
+        content:"";
+        position: absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background-image: url(/images/plat.jpg);
+        background-size: cover;
+        filter: brightness(0.3);
+        margin-bottom: 25px;
+    }
+
+    *{
+        //Positionner les éléments devant le ::before
+        position:relative;
+
+    }
+
+    .hero-scene-content{
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.img-card{
+    position:relative;
+
+    .img-title{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.img-card{
+    position: relative;
+
+    &:hover{
+        .img-title,
+        .card-text,
+        .action-img-btn{
+            opacity: 1;
+        }
+        img{
+            filter: brightness(0.4);
+            transform: scale(1.05);
+            
+        }
+    }
+    .action-img-btn{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 5px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    img{
+        border-radius: 10%;
+        transition: all 0.3s ease;
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+
+
+    }
+    .img-title{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+}
+}
+.card-text{
+    position: absolute;
+    bottom: 10%;
+    left: 0%;
+    font-size: 1rem;
+    background-color: antiquewhite;
+    color: black;
+    border-radius: 5px;
+    padding: 10px 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.form-label{
+    color: $primary;
+}
